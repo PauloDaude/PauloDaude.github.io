@@ -36,8 +36,10 @@ html, body, figure, img, div, input, textarea, p, h1, h2, h3, h4, h5, h6, ul, li
     --cor_fonte_secundaria: #636363;
     --cor_fonte_primaria: #000;
     --cor_da_borda: #12235049;          
-    /*--cor_da_borda: #04133d17;*/
     
+}
+.container, main{
+    transition: all ease .5s;
 }
 
 .coluna{
@@ -100,9 +102,13 @@ header .coluna ul li a{
 }
 
 
+
 /* PÁGINA INICIAL */
 main .coluna{
     padding: 20px;
+}
+main .container{
+    background-color: white;
 }
 main .coluna section{
     border-bottom: 1px solid var(--cor_da_borda);
@@ -161,6 +167,18 @@ footer nav .redes-sociais li{
 footer nav .redes-sociais li a img{
     width: 40px;
 }
+img.icon1:hover{
+    max-width: 50px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    transform: translateY(-10px);
+    transition: all ease .2s;
+}
+img.icon1{
+    transition: all ease .2s;
+}
 
 
 /* EXTRAS */
@@ -215,15 +233,23 @@ label span{
     --cor_fonte_secundaria: #fff;
     --cor_fonte_primaria: #fff;
     --cor_da_borda: #adb5ca17;
+    --transition: all ease .5s;
 }
 .ativar_dark:checked ~ .dark_mode header{
     background-color: var(--cor_background);
 }
-.ativar_dark:checked ~ .dark_mode .container {
+.ativar_dark:checked ~ .dark_mode header .container{
+    background-color: #000d2f;
+}
+.ativar_dark:checked ~ .dark_mode footer {
+    background-color: var(--cor_background);
+}
+.ativar_dark:checked ~ .dark_mode main .container{
     background-color: #000d2f;
 }
 .ativar_dark:checked ~ .dark_mode main{
-    background-color: var(--cor_background);
+    background-color: #000d2f;;
+    transition: all ease .5s;
 }
 .ativar_dark:checked ~ .dark_mode main .coluna section{
     border-bottom: 1px solid var(--cor_da_borda);
@@ -242,6 +268,24 @@ label span{
 }
 
 @keyframes aumentarAltura{
+    from{
+        height: 0;
+    }
+    to{
+        height: 100%;
+    }
+}
+
+@keyframes aumentarLargura2{
+    from{
+        width: 0;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes aumentarAltura2{
     from{
         height: 0;
     }
